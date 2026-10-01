@@ -1,0 +1,31 @@
+[project]
+name = "fightlens-api"
+version = "1.0.0"
+description = "REST API for UFC fights with Elo ratings (FastAPI, PostgreSQL, Redis)"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Artur Miling" }]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.162",
+    "uvicorn>=0.54",
+    "psycopg[binary]>=3.3",
+    "redis>=8.1",
+    "prometheus-fastapi-instrumentator>=8.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2",
+    "httpx2>=2.16",
+    "ruff>=0.17",
+]
+
+[tool.uv]
+package = false  # an app, not a library: it runs from this folder
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
