@@ -1,4 +1,4 @@
-FROM python:3.13-slim
+FROM python:3.15-slim
 
 # uv installs the exact package versions from uv.lock
 COPY --from=ghcr.io/astral-sh/uv:0.11 /uv /bin/uv
